@@ -1,0 +1,53 @@
+package main
+
+// // List ...
+// type List struct {
+// 	head *Node
+// 	tail *Node
+// }
+
+// // Node ...
+// type Node struct {
+// 	value int
+// 	next  *Node
+// }
+
+// // First ...
+// func (l *List) First() *Node {
+// 	return l.head
+// }
+
+// // Push ...
+// func (l *List) Push(value int) {
+// 	n := &Node{}
+// 	n.value = value
+// 	n.next = nil
+// 	if l.head == nil {
+// 		l.head = n
+// 	} else {
+// 		l.head.next = n
+// 	}
+// 	l.tail = n
+// }
+
+// // Next ...
+// func (n *Node) Next() *Node {
+// 	return n.next
+// }
+
+// // Last ...
+// func (l *List) Last() *Node {
+// 	return l.tail
+// }
+
+// func main() {
+// 	l := &List{}
+// 	l.Push(1)
+// 	l.Push(2)
+// 	a := l.First()
+// 	println(a.value)
+// 	n := a.Next()
+// 	println(n.value)
+// 	lastV := l.Last()
+// 	println(lastV.value)
+// }
