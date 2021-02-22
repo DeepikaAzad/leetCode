@@ -33,7 +33,8 @@ func TestAddTwoNumbers(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		actual := addTwoNumbers(FromSlice(testCase.gotList1), FromSlice(testCase.gotList2)).ToSlice()
+		actual := addTwoNumbers(FromSlice(testCase.gotList1),
+			(testCase.gotList2)).ToSlice()
 
 		utils.Checkf(t, is.DeepEqual(actual, testCase.want), testCase)
 	}
