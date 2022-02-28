@@ -21,7 +21,6 @@ func reverse(x int) int {
 }
 
 func reverse2(x int) int {
-  func reverse(x int) int {
 	numList := make(map[int]int)
 	count := 0
 	for {
@@ -46,6 +45,5 @@ func reverse2(x int) int {
 		return 0
 	}
 	return x
-}
 
 }
