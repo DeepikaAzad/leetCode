@@ -10,7 +10,7 @@ func main() {
 	ll.insertAtTheEnd(15)
 	ll.insertAtTheEnd(13)
 	ll.insertAtTheEnd(23)
-	ll = removeNthFromEnd(ll, 1)
+	ll = removeLastNthNode(ll, 1)
 	ll.traverse()
 }
 
@@ -38,6 +38,22 @@ func (ll *ListNode) traverse() {
 	}
 }
 
+func removeLastNthNode(head *ListNode, n int) *ListNode {
+	dummyNode := &ListNode{-1, head}
+	previouNthNode, curN := dummyNode, dummyNode
+	for curN.Next != nil {
+		if n <= 0 {
+			previouNthNode = previouNthNode.Next
+		}
+
+		curN = curN.Next
+		n -= 1
+	}
+	nthNode := previouNthNode.Next
+	previouNthNode.Next = nthNode.Next
+	return dummyNode.Next
+}
+
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	len := 0
 	temp1 := head
@@ -46,16 +62,19 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		temp1 = temp1.Next
 	}
 	index := len - n
+	fmt.Println(head)
 	temp3 := head
 	for i := 0; i <= index; i++ {
 		if index == 0 {
-			head = 0
+			head = nil
 			break
 		}
 		if i == index {
+			fmt.Println("removeNthFromEnd[", i, "]", temp3.Val, index)
 			temp := temp3.Next
 			temp3.Val = temp.Val
 			temp3.Next = temp.Next
+			fmt.Println("removeNthFromEnd[", i, "]", head.Val)
 			temp = nil
 		}
 		if temp3 != nil {
